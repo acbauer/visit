@@ -38,6 +38,9 @@
 #   Kathleen Bonnell, Wed Jan 05 10:25:13 PST 2010
 #   Add FOLDER property.
 #
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 
 SET(MCURVIT_SOURCES
@@ -110,7 +113,7 @@ ${VTKZLIB_LIB}
 ${VTK_FREETYPE_LIBRARIES}
 )
 
-LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${EAVL_LIBRARY_DIR} )
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY})
 
 IF(APPLE)
     ADD_EXECUTABLE(mcurvit MACOSX_BUNDLE ${MCURVIT_SOURCES} ${STATIC_SOURCES})

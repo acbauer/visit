@@ -38,6 +38,9 @@
 #   Kathleen Biagas, Thu Sep 27 11:35:34 PDT 2018
 #   Change PYTHON_LIBRARIES to PYTHON_LIBRARY for consistency throughout visit.
 #
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 
 INCLUDE_DIRECTORIES(
@@ -65,10 +68,7 @@ IF(VISIT_STATIC)
     SET(STATIC_SOURCES ../../visitpy/cli/ScriptingStaticSymbolLocator.C)
 ENDIF(VISIT_STATIC)
 
-LINK_DIRECTORIES(
-${LIBRARY_OUTPUT_DIRECTORY}
-${EAVL_LIBRARY_DIR} 
-)
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY})
 
 SET(VTK_EXTRA_LIBS
 vtktiff

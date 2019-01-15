@@ -73,6 +73,9 @@
 #   Eric Brugger, Tue Aug 28 14:35:30 PDT 2018
 #   I replaced support for vtkm with vtkh.
 #
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 
 SET(AVTFILTERS_SOURCES
@@ -193,7 +196,6 @@ ${VISIT_SOURCE_DIR}/avt/VisWindow/Proxies
 ${VISIT_SOURCE_DIR}/avt/VisWindow/Tools
 ${VISIT_SOURCE_DIR}/avt/VisWindow/VisWindow
 ${VISIT_SOURCE_DIR}/engine/main
-${EAVL_INCLUDE_DIR}
 ${VTKh_INCLUDE_DIRS}
 ${VTKM_DIR}/include/vtkm-1.2
 ${VTKM_DIR}/include/vtkm-1.2/vtkm/thirdparty/taotuple
@@ -201,11 +203,11 @@ ${VTK_INCLUDE_DIRS}
 )
 
 # Add link directories
-LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${EAVL_LIBRARY_DIR} )
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY})
 
 #********************************* SERIAL ************************************
 ADD_LIBRARY(avtfilters_ser ${AVTFILTERS_SOURCES})
-TARGET_LINK_LIBRARIES(avtfilters_ser visitcommon lightweight_visit_vtk visit_vtk avtmath avtview avtpipeline_ser avtdatabase_ser avtdbatts ${EAVL_LIB} vtkFiltersModeling)
+TARGET_LINK_LIBRARIES(avtfilters_ser visitcommon lightweight_visit_vtk visit_vtk avtmath avtview avtpipeline_ser avtdatabase_ser avtdbatts vtkFiltersModeling)
 IF(VISIT_OSPRAY) 
     TARGET_LINK_LIBRARIES(avtfilters_ser ${OSPRAY_LIBRARIES})
     IF(ICET_FOUND)
@@ -217,7 +219,7 @@ VISIT_INSTALL_TARGETS(avtfilters_ser)
 #********************************* PARALLEL **********************************
 IF(VISIT_PARALLEL)
     ADD_PARALLEL_LIBRARY(avtfilters_par ${AVTFILTERS_SOURCES})
-    TARGET_LINK_LIBRARIES(avtfilters_par visitcommon lightweight_visit_vtk visit_vtk avtmath avtview avtpipeline_par avtdatabase_par avtdbatts ${EAVL_LIB} vtkFiltersModeling)
+    TARGET_LINK_LIBRARIES(avtfilters_par visitcommon lightweight_visit_vtk visit_vtk avtmath avtview avtpipeline_par avtdatabase_par avtdbatts vtkFiltersModeling)
     IF(VISIT_OSPRAY) 
         TARGET_LINK_LIBRARIES(avtfilters_par ${OSPRAY_LIBRARIES})
         IF(ICET_FOUND)

@@ -35,6 +35,8 @@
 # DAMAGE.
 #
 # Modifications:
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
 #
 #****************************************************************************/
 
@@ -104,7 +106,7 @@ ${VISIT_SOURCE_DIR}/winutil
 ${VTK_INCLUDE_DIRS}
 )
 
-LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${EAVL_LIBRARY_DIR} )
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY})
 
 #*************************** The viewer library ******************************
 ADD_LIBRARY(viewersubjectproxy ${VIEWERLIB_SOURCES} ${VIEWERLIB_MOC_SOURCES})

@@ -39,6 +39,9 @@
 #   Hank Childs, Sat Jun  5 16:26:46 CDT 2010
 #   Add avtStateRecorderIntegralCurve.
 #
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 SET(AVTIVP_SOURCES
 avtCellLocator.C
@@ -116,7 +119,7 @@ ${ACCELERATE_FRAMEWORK_INCLUDE_DIR}
 )
 
 # Add link directories
-LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${EAVL_LIBRARY_DIR} ${NEKTAR++_LIBRARY_DIR} ${NEKTAR++_LIBRARY_DIRS} ${NEKTAR++_TP_LIBRARY_DIRS} ${ACCELERATE_FRAMEWORK_LINK_FLAGS})
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${NEKTAR++_LIBRARY_DIR} ${NEKTAR++_LIBRARY_DIRS} ${NEKTAR++_TP_LIBRARY_DIRS} ${ACCELERATE_FRAMEWORK_LINK_FLAGS})
 
 #ADD_LIBRARY(avtivp ${AVTIVP_SOURCES})
 #TARGET_LINK_LIBRARIES(avtivp avtfilters avtmath visitcommon visit_vtk vtkCommonCore vtkFiltersCore ${NEKTAR++_LIB} ${NEKTAR++_LIBRARIES} ${NEKTAR++_TP_LIBRARIES})

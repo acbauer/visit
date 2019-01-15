@@ -44,6 +44,9 @@
 #   Brad Whitlock, Thu Oct 20 15:42:10 PDT 2011
 #   Fix static build.
 #
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 
 SET(SOURCES1
@@ -96,7 +99,7 @@ ${VISIT_SOURCE_DIR}/vtkqt
 ${VTK_INCLUDE_DIRS}
 )
 
-LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${EAVL_LIBRARY_DIR} )
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY})
 
 IF(NOT APPLE)
     ADD_EXECUTABLE(embedded ${VISIT_APPLICATION_STYLE} ${SOURCES1} ${STATIC_SOURCES1})

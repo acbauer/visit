@@ -50,6 +50,10 @@
 #
 #    Kevin Griffin, Thu Aug 11 10:53:13 PDT 2016
 #    Add avtGyRadiusQuery.
+#
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 
 SET(ABSTRACT_SOURCES
@@ -211,7 +215,7 @@ IF(VISIT_PYTHON_FILTERS)
 ENDIF(VISIT_PYTHON_FILTERS)
 
 # Add link directories
-LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${EAVL_LIBRARY_DIR} )
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY})
 
 IF(VISIT_PYTHON_FILTERS)
     LINK_DIRECTORIES(${PYTHON_LIBRARY_DIRS})

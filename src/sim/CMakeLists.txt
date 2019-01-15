@@ -38,10 +38,9 @@
 #  Kathleen Biagas, Tue Aug 19 16:35:33 PDT 2014
 #  Removed V1.
 #
+#  Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#  Removed support for EAVL.
+#
 #****************************************************************************/
-
-LINK_DIRECTORIES(
-${EAVL_LIBRARY_DIR}
-)
 
 ADD_SUBDIRECTORY(V2)

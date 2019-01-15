@@ -39,6 +39,9 @@
 #    Use proper python include path ${PYTHON_INCLUDE_PATH}, instead of 
 #    ${PYTHON_INCLUDE_DIRS}
 #
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 
 SET(AVTPYTHON_FILTERS_SOURCES
@@ -66,7 +69,7 @@ ${PYTHON_INCLUDE_PATH}
 )
 
 # Add link directories
-LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${EAVL_LIBRARY_DIR} ${PYTHON_DIR})
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${PYTHON_DIR})
 
 
 #********************************* SERIAL ************************************

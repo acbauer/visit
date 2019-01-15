@@ -48,6 +48,9 @@
 #  Only add ViewerSubmitParallEngineToWindowsHPC if we actually have the
 #  HPC scheduler.
 #
+#  Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#  Removed support for EAVL.
+#
 #****************************************************************************/
 IF(VISIT_PARALLEL AND WIN32 AND HAVE_HPC_SCHEDULER)
     SET(VIEWERLIB_WIN32_SOURCES
@@ -59,17 +62,17 @@ IF(VISIT_PARALLEL AND WIN32 AND HAVE_HPC_SCHEDULER)
 ENDIF(VISIT_PARALLEL AND WIN32 AND HAVE_HPC_SCHEDULER)
 
 IF(VISIT_DDT)
-SET(VIEWER_DDT
-ddt/DDTManager.C
-ddt/DDTSession.C
-ddt/DDTActions.C
-ddt/DDTActionsUI.C
-)
+    SET(VIEWER_DDT
+        ddt/DDTManager.C
+        ddt/DDTSession.C
+        ddt/DDTActions.C
+        ddt/DDTActionsUI.C
+    )
 
-SET(VIEWER_DDT_MOC
-ddt/DDTManager.h
-ddt/DDTSession.h
-)
+    SET(VIEWER_DDT_MOC
+        ddt/DDTManager.h
+        ddt/DDTSession.h
+    )
 ENDIF(VISIT_DDT)
 
 SET(VIEWER_UI
@@ -116,7 +119,6 @@ ui/VisItPasswordWindow.h
 SET(VIEWERLIB_SOURCES
 ${VIEWER_UI}
 ${VIEWER_DDT}
-#QWsSocket.C
 SharedDaemon.C
 ViewerBaseUI.C
 ViewerClientConnection.C
@@ -146,7 +148,6 @@ ENDIF(VISIT_STATIC)
 SET(VIEWERLIB_MOC_SOURCES
 ${VIEWER_UI_MOC}
 ${VIEWER_DDT_MOC}
-#QWsSocket.h
 SharedDaemon.h
 ViewerBaseUI.h
 ViewerClientConnection.h
@@ -209,7 +210,7 @@ if(HAVE_OSMESA OR HAVE_EGL)
     include_directories(${VISIT_SOURCE_DIR}/visit_vtk/offscreen)
 endif()
 
-LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${EAVL_LIBRARY_DIR} )
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY})
 
 
 #*************************** The viewer library ******************************

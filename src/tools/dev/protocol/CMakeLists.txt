@@ -38,6 +38,9 @@
 #   Kathleen Bonnell, Wed Jan 05 10:25:13 PST 2010
 #   Add FOLDER property.
 #
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 
 INCLUDE_DIRECTORIES(
@@ -69,7 +72,6 @@ ENDIF(VISIT_STATIC)
 
 LINK_DIRECTORIES(
 ${LIBRARY_OUTPUT_DIRECTORY}
-${EAVL_LIBRARY_DIR} 
 ${ALL_THIRDPARTY_IO_LIBRARY_DIR}
 )
 

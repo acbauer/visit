@@ -78,6 +78,9 @@
 #    Timo Bremer, Fri Oct 28 09:09:27 PDT 2016
 #    Added merge tree and local threshold.
 #
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 
 SET(ABSTRACT_SOURCES
@@ -383,7 +386,7 @@ ENDIF(VISIT_PYTHON_FILTERS)
 
 
 # Add link directories
-LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${EAVL_LIBRARY_DIR} )
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY})
 
 IF(VISIT_PYTHON_FILTERS)
     LINK_DIRECTORIES(${PYTHON_LIBRARY_DIRS})

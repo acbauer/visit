@@ -38,6 +38,9 @@
 #  Cyrus Harrison, Tue Aug 10 10:39:08 PDT 2010
 #   Added rms operator.
 #
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 
 SET(AVTDBIN_SOURCES
@@ -75,7 +78,7 @@ ${VTK_INCLUDE_DIRS}
 )
 
 # Add link directories
-LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${EAVL_LIBRARY_DIR} )
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY})
 
 #********************************* SERIAL ************************************
 ADD_LIBRARY(avtdbin_ser ${AVTDBIN_SOURCES})

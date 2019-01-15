@@ -59,6 +59,9 @@
 #   Added the SaveSessionRPCExecutor.C and RestoreSessionRPCExecutor.C files.
 #   They are used for the remove save and load of session files.
 #
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 
 SET(MDSERVER_SOURCES
@@ -122,7 +125,6 @@ ${SIMV2_PLUGIN_DIR}
 
 LINK_DIRECTORIES(
 ${LIBRARY_OUTPUT_DIRECTORY}
-${EAVL_LIBRARY_DIR}
 ${ALL_THIRDPARTY_IO_LIBRARY_DIR}
 )
 

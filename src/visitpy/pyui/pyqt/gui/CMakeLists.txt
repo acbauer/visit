@@ -38,6 +38,9 @@
 #   Kathleen Biagas, Thu Sep 27 11:35:34 PDT 2018
 #   Change PYTHON_LIBRARIES to PYTHON_LIBRARY for consistency throughout visit.
 #
+#    Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#    Removed support for EAVL.
+#
 #*****************************************************************************
 
 set(pyqtgui_include_paths ${CMAKE_CURRENT_SOURCE_DIR}
@@ -112,12 +115,4 @@ SET_TARGET_PROPERTIES(${SIP_LIBRARY} PROPERTIES PREFIX "")
 SET_TARGET_PROPERTIES(${SIP_LIBRARY} PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/site-packages/visit)
 TARGET_LINK_LIBRARIES(${SIP_LIBRARY} ${pyqtgui_link_libs})
 VISIT_INSTALL_TARGETS_RELATIVE("site-packages/visit" ${SIP_LIBRARY})
-
-
-#
-# If we enable eval, it will appear in the link line, so add ${EAVL_LIBRARY_DIR}
-#
-IF(EAVL_FOUND)
-    LINK_DIRECTORIES(${EAVL_LIBRARY_DIR})
-ENDIF()
 

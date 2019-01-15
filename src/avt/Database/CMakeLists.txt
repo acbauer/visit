@@ -39,6 +39,9 @@
 #  Cyrus Harrison, Thu Apr 19 16:07:11 PDT 2012
 #  Added Ghost/avtLocalStructuredDomainBoundaries.C
 #
+#   Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#   Removed support for EAVL.
+#
 #****************************************************************************/
 
 SET(DATABASE_SOURCES
@@ -115,7 +118,7 @@ ${VTK_INCLUDE_DIRS}
 )
 
 # Add link directories
-LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY} ${EAVL_LIBRARY_DIR} )
+LINK_DIRECTORIES(${LIBRARY_OUTPUT_DIRECTORY})
 
 # Unless we're doing a VISIT_DBIO_ONLY build then we need avtmir
 IF(NOT VISIT_DBIO_ONLY)

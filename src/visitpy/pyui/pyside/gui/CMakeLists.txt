@@ -42,6 +42,9 @@
 #    Kathleen Biagas, Tue Jan 24 11:06:12 PST 2017
 #    Add support for Qt5.
 #
+#    Kathleen Biagas, Thu Jan 10 10:14:47 PST 2019
+#    Removed support for EAVL.
+#
 #*****************************************************************************
 
 set(pyside_gui_include_paths
@@ -103,14 +106,6 @@ LINK_DIRECTORIES(${QWT_LIBRARY_DIR})
 IF(OSMESA_FOUND)
     set(pyside_gui_link_libs ${pyside_gui_link_libs} ${OSMESA_LIBRARIES})
 ENDIF()
-
-#
-# If we enable eavl, it will appear in the link line, so add ${EAVL_LIBRARY_DIR}
-#
-IF(EAVL_FOUND)
-    LINK_DIRECTORIES(${EAVL_LIBRARY_DIR})
-ENDIF()
-
 
 PYSIDE_ADD_MODULE(pyside_gui
                   site-packages/visit
